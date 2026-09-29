@@ -1,0 +1,66 @@
+import type { Language } from '../content'
+
+export type Concept = 'ice' | 'arena' | 'atlas'
+export const conceptIds: Concept[] = ['ice', 'arena', 'atlas']
+export const conceptNames: Record<Language, string[]> = {
+  ru: ['Линия льда', 'Ночная арена', 'Атлас обмена'],
+  en: ['Ice line', 'Night arena', 'Exchange atlas'],
+  es: ['Línea de hielo', 'Arena nocturna', 'Atlas de intercambio'],
+}
+export const conceptCopy = {
+  ru: {
+    concepts: 'Концепции', original: 'Исходный сайт',
+    line1: 'Соединяем', line2: 'страны', line3: 'через лёд.',
+    shortIntro: 'Ледовые виды спорта. Международное сотрудничество. Новые возможности.',
+    discover: 'Знакомьтесь с фондом', pass: 'Сделать пас', passHint: 'Большие перемены начинаются с одного паса',
+    passStatus: 'Пас выполнен', passCount: 'Пасов', scroll: 'Листайте вниз',
+    countries: 'Страны сотрудничества', directions: 'Направлений работы',
+    mission: 'Один лёд. Общие возможности.', work: 'От первого шага — к большой игре.',
+    people: 'Люди, которые знают спорт изнутри.', gallery: 'То, что нас объединяет.',
+    contact: 'Следующий пас — за вами.', connect: 'Давайте знакомиться',
+    world: 'У спорта нет границ.', worldNote: 'Обмениваемся опытом. Открываем новые возможности.',
+    mexico: 'Особое место — Мексика', mexicoNote: 'Ледовая инфраструктура, национальная лига и опыт российских тренеров с 1990-х годов.',
+    countryHint: 'Выберите страну на маршруте', countryStatus: 'На маршруте',
+    labelIce: 'Пространство для большого будущего', labelArena: 'Энергия игры. Сила обмена.', labelAtlas: 'Международный фонд ледовых видов спорта',
+    image: 'Шайба на льду', player: 'Хоккеист на ледовой площадке',
+    zoom: 'Смотреть фотографию', close: 'Закрыть', next: 'Следующая', prev: 'Предыдущая',
+    made: 'Лёд объединяет', top: 'Наверх', expand: 'Подробнее',
+  },
+  en: {
+    concepts: 'Concepts', original: 'Original site',
+    line1: 'Connecting', line2: 'countries', line3: 'through ice.',
+    shortIntro: 'Ice sports. International cooperation. New possibilities.',
+    discover: 'Discover the foundation', pass: 'Make a pass', passHint: 'Big changes start with a single pass',
+    passStatus: 'Pass complete', passCount: 'Passes', scroll: 'Scroll to explore',
+    countries: 'Countries of cooperation', directions: 'Areas of work',
+    mission: 'One ice. Shared possibilities.', work: 'From a first step to the big game.',
+    people: 'People who know sport from the inside.', gallery: 'What brings us together.',
+    contact: 'The next pass is yours.', connect: 'Let’s get to know each other',
+    world: 'Sport has no borders.', worldNote: 'Sharing experience. Opening new possibilities.',
+    mexico: 'A special place for Mexico', mexicoNote: 'Ice infrastructure, a national league and Russian coaching expertise since the 1990s.',
+    countryHint: 'Choose a country along the route', countryStatus: 'On the route',
+    labelIce: 'Room for a bright future', labelArena: 'The energy of sport. The power of exchange.', labelAtlas: 'International foundation for ice sports',
+    image: 'A hockey puck on the ice', player: 'A hockey player on the rink',
+    zoom: 'View photo', close: 'Close', next: 'Next', prev: 'Previous',
+    made: 'Ice brings us together', top: 'Back to top', expand: 'Read more',
+  },
+  es: {
+    concepts: 'Conceptos', original: 'Sitio original',
+    line1: 'Conectamos', line2: 'países', line3: 'con el hielo.',
+    shortIntro: 'Deportes de hielo. Cooperación internacional. Nuevas oportunidades.',
+    discover: 'Conoce la fundación', pass: 'Dar un pase', passHint: 'Los grandes cambios empiezan con un solo pase',
+    passStatus: 'Pase completado', passCount: 'Pases', scroll: 'Sigue explorando',
+    countries: 'Países colaboradores', directions: 'Áreas de trabajo',
+    mission: 'Un hielo. Oportunidades compartidas.', work: 'Del primer paso al gran juego.',
+    people: 'Personas que conocen el deporte desde dentro.', gallery: 'Lo que nos une.',
+    contact: 'El siguiente pase es tuyo.', connect: 'Vamos a conocernos',
+    world: 'El deporte no tiene fronteras.', worldNote: 'Compartimos experiencia. Abrimos oportunidades.',
+    mexico: 'Un lugar especial para México', mexicoNote: 'Infraestructuras de hielo, una liga nacional y experiencia de entrenadores rusos desde los años noventa.',
+    countryHint: 'Elige un país en la ruta', countryStatus: 'En la ruta',
+    labelIce: 'Espacio para un gran futuro', labelArena: 'La energía del juego. El poder del intercambio.', labelAtlas: 'Fundación internacional de deportes de hielo',
+    image: 'Un disco de hockey sobre el hielo', player: 'Jugador de hockey en la pista de hielo',
+    zoom: 'Ver foto', close: 'Cerrar', next: 'Siguiente', prev: 'Anterior',
+    made: 'El hielo nos une', top: 'Volver arriba', expand: 'Más información',
+  },
+}
+export type ConceptCopy = typeof conceptCopy.ru
