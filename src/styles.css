@@ -245,7 +245,7 @@ html.telegram-browser,html.telegram-browser body{height:100%;overflow:hidden;ove
 .photo-expand svg{width:17px}.gallery-photo:hover .photo-expand{background:#d32643}
 
 
-.contacts{background:#0d1b30;padding:76px 0 84px;border-top:1px solid var(--line)}
+.contacts{background:var(--navy);padding:76px 0 84px;border-top:1px solid var(--line)}
 .contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:90px;align-items:center}
 .contacts .eyebrow{margin-bottom:18px}.contacts h2{font-size:76px}
 .contact-intro{margin-top:18px;font-size:16px;max-width:440px;color:#a5b6ce}
