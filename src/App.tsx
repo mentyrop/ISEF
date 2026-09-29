@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { LazyMotion, domAnimation, m, MotionConfig, useReducedMotion } from 'motion/react'
-import { ArrowUpRight, ArrowDown, ArrowRight, ChevronLeft, ChevronRight, Menu, X, Maximize2 } from 'lucide-react'
+import { ArrowUpRight, ArrowDown, ChevronLeft, ChevronRight, Menu, X, Maximize2 } from 'lucide-react'
 import { asset, content, flags, mapUrl, photos, sectionIds, type Copy, type Language } from './content'
 import { designCopy } from './design-copy'
 import BiographyDialog, { PersonPortrait } from './BiographyDialog'
@@ -164,8 +164,8 @@ export default function App() {
           <div className="container hero-layout">
             <Reveal className="hero-content">
               <h1 id="hero-title">{design.heroStart} <span>{design.heroEnd}</span></h1><p className="hero-intro">{copy.heroText}</p>
-              <div className="hero-actions"><a className="button button-primary" href="#activities">{copy.aboutButton}<ArrowUpRight size={18} /></a>
-                <a className="button button-outline" href="#contacts">{copy.contactButton}<ArrowRight size={18} /></a></div>
+              <div className="hero-actions"><a className="button button-primary" href="#activities">{copy.aboutButton}</a>
+                <a className="button button-outline" href="#contacts">{copy.contactButton}</a></div>
               <a className="hero-scroll" href="#activities"><span><ArrowDown size={16} /></span>{design.scroll}</a>
             </Reveal>
           </div>
