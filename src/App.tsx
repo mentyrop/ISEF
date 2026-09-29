@@ -193,9 +193,14 @@ export default function App() {
         <div className="people-region">
           <section className="geography container" id="geography" aria-labelledby="geography-title">
             <Reveal className="geography-intro"><div><p className="eyebrow">03 / ISEF WORLDWIDE</p><h2 id="geography-title">{copy.geographyTitle}</h2></div><p>{copy.geographyText}</p></Reveal>
-            <ul className="country-grid">{copy.countries.map((name, index) => <li className={`country ${index === 4 ? 'country-featured' : ''}`} key={flags[index]}>
-              <Flag index={index} /><span>{name}</span>
-            </li>)}</ul>
+            <div className="country-network">
+              <ul className="country-grid">{copy.countries.map((name, index) => <li className={`country ${index === 4 ? 'country-featured' : ''}`} key={flags[index]}>
+                <Flag index={index} /><span>{name}</span>
+              </li>)}</ul>
+              <div className="country-connections" aria-hidden="true">
+                {flags.slice(1).map(flag => <img key={flag} src={asset('aafa5.svg')} alt="" />)}
+              </div>
+            </div>
           </section>
 
         </div>
