@@ -182,8 +182,7 @@ html.telegram-browser,html.telegram-browser body{height:100%;overflow:hidden;ove
 .pillar h3{font-size:17px;font-weight:650}
 .pillar p{margin-top:12px;color:#435569;font-size:14px;line-height:1.85}
 
-.people-region{position:relative;background:#0b172b;padding:80px 0}
-.people-region::before{content:'';position:absolute;pointer-events:none;inset:0;background:radial-gradient(ellipse at 80% 100%,#24477350,transparent 60%)}
+.people-region{position:relative;background:var(--navy);padding:80px 0}
 .geography{position:relative}
 .geography-intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:75px;align-items:start}
 .geography-intro>p{color:#afbed3;max-width:680px;font-size:15px;line-height:1.85}
