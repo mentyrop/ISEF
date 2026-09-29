@@ -1,10 +1,11 @@
 import { expect, test } from '@playwright/test'
 
-test('a direct section URL opens below the sticky header', async ({ page }) => {
+test('a direct section URL opens below the fixed header', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto('/?lang=es#about')
   await page.evaluate(() => document.fonts.ready)
-  await expect.poll(() => page.locator('#about').evaluate(el => Math.round(el.getBoundingClientRect().top))).toBe(88)
+  const headerBottom = await page.locator('.header').evaluate(el => el.getBoundingClientRect().bottom)
+  await expect.poll(() => page.locator('#about').evaluate(el => Math.round(el.getBoundingClientRect().top))).toBe(Math.round(headerBottom + 20))
 })
 
 for (const width of [320, 390, 768, 1024, 1440, 1920]) {

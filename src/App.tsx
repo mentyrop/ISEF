@@ -135,8 +135,7 @@ export default function App() {
 
   return <LazyMotion features={domAnimation}><MotionConfig reducedMotion="user">
     <a className="skip-link" href="#main">{copy.skip}</a>
-    <div className="site">
-      <header className="header"><div className="container header-inner">
+    <header className="header"><div className="container header-inner">
         <a className="brand" href="#home" aria-label="ISEF — Ice Sport Exchange Foundation">
           <img src={asset('9d28f.png')} alt="" width="96" height="56" fetchPriority="high" />
           <span><strong>ISEF</strong><small>Ice Sport Exchange Foundation</small></span>
@@ -146,8 +145,9 @@ export default function App() {
         <LanguagePicker language={language} onChange={setLanguage} copy={copy} />
         <button className="mobile-language" onClick={openMenu} aria-label={copy.languageLabel}>{language.toUpperCase()}</button>
         <button className="icon-button menu-toggle" aria-label={copy.openMenu} aria-expanded={menuOpen} aria-controls="mobile-menu" onClick={openMenu}><Menu /></button>
-      </div></header>
+    </div></header>
 
+    <div className="site">
       <dialog ref={menuDialog} id="mobile-menu" className="mobile-menu" aria-label={copy.openMenu}
         onClose={() => { setMenuOpen(false); document.body.classList.remove('dialog-open') }}>
         <div className="mobile-menu-top"><strong>ISEF</strong><button className="icon-button" onClick={closeMenu} aria-label={copy.close}><X /></button></div>
