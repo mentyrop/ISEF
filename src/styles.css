@@ -201,6 +201,10 @@ html.telegram-browser,html.telegram-browser body{height:100%;overflow:hidden;ove
 .country .flag{width:36px}
 .country-featured{background:#e3ecf4;color:var(--ink);border-color:transparent}
 .country-featured:hover{background:#fff}
+.country-featured::before{content:'';position:absolute;inset:-1px;border-radius:inherit;background:#fff;box-shadow:0 0 0 1px #aecde666,0 0 24px #aecde640;opacity:0;pointer-events:none}
+.country-featured>*{position:relative;z-index:1}
+.country-featured-visible::before{animation:country-highlight 2.6s ease-in-out .2s both}
+@keyframes country-highlight{0%,100%{opacity:0}35%,55%{opacity:1}}
 
 
 /* Leadership and experts occupy distinct rows with shared rink dividers. */
