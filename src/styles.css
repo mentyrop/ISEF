@@ -53,8 +53,12 @@ button:focus-visible,a:focus-visible{outline:3px solid #82c5f9;outline-offset:5p
 
 
 
-/* Outside the clipped page: avoid sticky/compositing offsets in embedded WebKit. */
+/* Keep navigation outside the clipped page, anchored to the browser viewport. */
 .header{position:fixed;inset:0 0 auto;z-index:20;padding-top:var(--safe-top);background:var(--navy);border-bottom:1px solid var(--line)}
+/* Telegram's iOS browser lets scrolled content paint above its WKWebView frame.
+   Extend this same fixed layer upward to cover that exposed native-toolbar area.
+   No layout offset or scroll handler: Safari and desktop keep their positioning. */
+.header::before{content:"";position:absolute;inset:-100vh 0 0;z-index:-1;background:var(--navy);pointer-events:none}
 .header-inner{height:var(--header-height);display:flex;align-items:center;gap:24px;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:8px;flex:none}
 .brand img{width:62px;height:44px;object-fit:contain}
