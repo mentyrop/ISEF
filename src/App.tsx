@@ -39,7 +39,7 @@ function Person({ index, copy, language, onOpen }: { index: number; copy: Copy; 
   const labels = biographyLabels[language]
   return <article className="person">
     <PersonPortrait index={index} name={copy.people[index].name} />
-    <div><h3>{copy.people[index].name}</h3><p>{copy.people[index].role}</p></div>
+    <div><h4>{copy.people[index].name}</h4><p>{copy.people[index].role}</p></div>
     <button type="button" className="person-open" aria-label={`${labels.open}: ${copy.people[index].name}`} aria-haspopup="dialog" aria-controls="biography-dialog" onClick={() => onOpen(index)} />
   </article>
 }
@@ -179,11 +179,12 @@ export default function App() {
         </section>
 
         <section className="mission" id="about" aria-labelledby="mission-title">
+          <div className="mission-backdrop" aria-hidden="true"><img src={asset('d156b.png')} alt="" width="1180" height="1767" loading="lazy" /></div>
           <div className="container mission-content"><div className="mission-layout"><Reveal className="mission-text">
             <p className="eyebrow">02 / {copy.missionLabel}</p>
             <h2 id="mission-title">{copy.missionLead} <span className="mission-rest">{copy.missionRest}.</span></h2>
             <p className="mission-intro">{copy.missionText}</p>
-          </Reveal><Reveal className="mission-visual" delay={0.1}><img src={asset('d156b.png')} alt="" width="1180" height="1767" loading="lazy" /></Reveal></div>
+          </Reveal></div>
           <div className="pillar-grid">{copy.pillars.map((item, index) => <Reveal className="pillar" key={index} delay={index * 0.08}>
             <article><h3>{item.title}</h3><p>{item.description}</p></article>
           </Reveal>)}</div></div>
@@ -199,10 +200,18 @@ export default function App() {
 
         </div>
 
-          <section className="team" id="team" aria-labelledby="team-title"><div className="container">
+          <section className="team" id="team" aria-labelledby="team-title">
+            <div className="team-rink" aria-hidden="true" />
+            <div className="container">
             <Reveal className="section-heading"><div><p className="eyebrow">04 / ISEF TEAM</p><h2 id="team-title">{copy.teamTitle}</h2></div><p className="section-description">{design.teamIntro}</p></Reveal>
-            <Reveal className="leadership">{[0, 1].map(index => <Person key={index} index={index} copy={copy} language={language} onOpen={setSelectedPerson} />)}</Reveal>
-            <Reveal className="experts">{[2, 3, 4, 5].map(index => <Person key={index} index={index} copy={copy} language={language} onOpen={setSelectedPerson} />)}</Reveal>
+            <div className="team-group" role="group" aria-labelledby="leadership-title">
+              <h3 className="team-group-title eyebrow" id="leadership-title">{biographyLabels[language].leadership}</h3>
+              <Reveal className="leadership">{[0, 1].map(index => <Person key={index} index={index} copy={copy} language={language} onOpen={setSelectedPerson} />)}</Reveal>
+            </div>
+            <div className="team-group" role="group" aria-labelledby="experts-title">
+              <h3 className="team-group-title eyebrow" id="experts-title">{biographyLabels[language].experts}</h3>
+              <Reveal className="experts">{[2, 3, 4, 5].map(index => <Person key={index} index={index} copy={copy} language={language} onOpen={setSelectedPerson} />)}</Reveal>
+            </div>
             <div className="governance">{copy.governance.map((item, index) => <Reveal key={index} delay={index * 0.07}>
               <article><h3>{item.title}</h3><p>{item.description}</p></article>
             </Reveal>)}</div>
