@@ -14,7 +14,8 @@ type Props = {
 export function PersonPortrait({ index, name, className = 'portrait' }: { index: number; name: string; className?: string }) {
   const src = personPhoto(index)
   return src ? <span className={`${className} portrait-frame`} data-person={personIds[index]} aria-hidden="true">
-    <img src={src} alt="" loading="lazy" />
+    {/* Cropping can hide an unloaded image's zero-height box from Safari's lazy-load observer. */}
+    <img src={src} alt="" loading="eager" decoding="async" />
   </span> :
     <div className={`${className} portrait-initials`} aria-hidden="true">{name.split(' ').map(word => word[0]).join('')}</div>
 }
