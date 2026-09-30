@@ -13,7 +13,9 @@ type Props = {
 
 export function PersonPortrait({ index, name, className = 'portrait' }: { index: number; name: string; className?: string }) {
   const src = personPhoto(index)
-  return src ? <img className={className} src={src} alt="" width="240" height="240" loading="lazy" /> :
+  return src ? <span className={`${className} portrait-frame`} data-person={personIds[index]} aria-hidden="true">
+    <img src={src} alt="" loading="lazy" />
+  </span> :
     <div className={`${className} portrait-initials`} aria-hidden="true">{name.split(' ').map(word => word[0]).join('')}</div>
 }
 

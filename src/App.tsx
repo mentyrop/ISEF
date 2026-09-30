@@ -48,8 +48,9 @@ function Person({ index, copy, language, onOpen }: { index: number; copy: Copy; 
   const labels = biographyLabels[language]
   return <article className="person">
     <PersonPortrait index={index} name={copy.people[index].name} />
-    <div><h3>{copy.people[index].name}</h3><p>{copy.people[index].role}</p></div>
-    <button type="button" className="person-open" aria-label={`${labels.open}: ${copy.people[index].name}`} aria-haspopup="dialog" aria-controls="biography-dialog" onClick={() => onOpen(index)} />
+    <div><h3>{copy.people[index].name}</h3><p>{copy.people[index].role}</p>
+      <button type="button" className="person-open" aria-label={`${labels.open}: ${copy.people[index].name}`} aria-haspopup="dialog" aria-controls="biography-dialog" onClick={() => onOpen(index)}>{labels.biography}</button>
+    </div>
   </article>
 }
 
@@ -188,7 +189,7 @@ export default function App() {
         </section>
 
         <section className="mission" id="about" aria-labelledby="mission-title">
-          <div className="mission-backdrop" aria-hidden="true"><img src={asset('d156b.png')} alt="" width="1180" height="1767" loading="lazy" /></div>
+          <div className="mission-backdrop" aria-hidden="true"><img src={asset('mission-ice.png')} alt="" width="1792" height="2688" loading="lazy" /></div>
           <div className="container mission-content"><div className="mission-layout"><Reveal className="mission-text">
             <p className="eyebrow">02 / {copy.missionLabel}</p>
             <h2 id="mission-title">{copy.missionLead} <span className="mission-rest">{copy.missionRest}.</span></h2>

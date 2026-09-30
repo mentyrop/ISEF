@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "optimize:images": "node scripts/optimize-assets.mjs",
+    "predev": "node scripts/optimize-portraits.mjs",
     "dev": "vite --host 127.0.0.1",
+    "prebuild": "node scripts/optimize-portraits.mjs",
     "build": "tsc -b && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "test": "playwright test",

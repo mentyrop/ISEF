@@ -3,8 +3,8 @@ import { asset, portraits, type Language } from './content'
 export const personIds = ['vladimir-milyaev', 'alexander-glazov', 'valery-afanasyev', 'alexander-sazykin', 'alexey-sazykin', 'sergey-glazov'] as const
 type PersonId = typeof personIds[number]
 
-// New portraits are optional. Existing images remain until the originals arrive.
-const originalPortraits = import.meta.glob<string>('./assets/people/*.{avif,jpg,jpeg,png,webp}', {
+// Generated from the supplied originals before development and production builds.
+const originalPortraits = import.meta.glob<string>('./assets/people/optimized/*.webp', {
   eager: true, query: '?url', import: 'default',
 })
 export function personPhoto(index: number) {
@@ -13,9 +13,9 @@ export function personPhoto(index: number) {
 }
 
 export const biographyLabels = {
-  ru: { open: 'Открыть биографию', leadership: 'Руководство', experts: 'Эксперты', previous: 'Предыдущий профиль', next: 'Следующий профиль' },
-  en: { open: 'Read biography', leadership: 'Leadership', experts: 'Experts', previous: 'Previous profile', next: 'Next profile' },
-  es: { open: 'Leer biografía', leadership: 'Dirección', experts: 'Expertos', previous: 'Perfil anterior', next: 'Siguiente perfil' },
+  ru: { open: 'Открыть биографию', biography: 'Биография', leadership: 'Руководство', experts: 'Эксперты', previous: 'Предыдущий профиль', next: 'Следующий профиль' },
+  en: { open: 'Read biography', biography: 'Biography', leadership: 'Leadership', experts: 'Experts', previous: 'Previous profile', next: 'Next profile' },
+  es: { open: 'Leer biografía', biography: 'Biografía', leadership: 'Dirección', experts: 'Expertos', previous: 'Perfil anterior', next: 'Siguiente perfil' },
 }
 
 // Biographies supplied by the client. Sergey's short entry uses the two facts

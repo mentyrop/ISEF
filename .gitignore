@@ -8,4 +8,5 @@ playwright-report/
 !.env.example
 ISEF Page/
 .qa/
+src/assets/people/optimized/
 *.tsbuildinfo

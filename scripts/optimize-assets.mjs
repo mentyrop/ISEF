@@ -4,6 +4,7 @@ import { mkdir, stat } from 'node:fs/promises'
 const sizes = {
   'a2f66.png': 1800,
   'd156b.png': 1100,
+  'mission-ice.png': 1600,
   '9d28f.png': 192,
   '218e8.png': 1100,
   '39df7.png': 900,
