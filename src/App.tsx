@@ -8,6 +8,13 @@ import BiographyDialog, { PersonPortrait } from './BiographyDialog'
 import { biographyLabels } from './biographies'
 import { initialLanguage, isLanguage, localizedUrl } from './language'
 
+function Brand({ footer = false }: { footer?: boolean }) {
+  return <a className={`brand${footer ? ' footer-brand' : ''}`} href="#home" aria-label="ISEF — Ice Sport Exchange Foundation">
+    <img src={asset('9d28f.png')} alt="" width="96" height="56" fetchPriority={footer ? undefined : 'high'} />
+    <span><strong>ISEF</strong><small>Ice Sport Exchange Foundation</small></span>
+  </a>
+}
+
 function Reveal({ children, className = '', delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
   const reduce = useReducedMotion()
   return <m.div className={className} initial={reduce ? false : { opacity: 0, y: 22 }}
@@ -153,10 +160,7 @@ export default function App() {
   return <LazyMotion features={domAnimation}><MotionConfig reducedMotion="user">
     <a className="skip-link" href="#main">{copy.skip}</a>
     <header className="header"><div className="container header-inner">
-        <a className="brand" href="#home" aria-label="ISEF — Ice Sport Exchange Foundation">
-          <img src={asset('9d28f.png')} alt="" width="96" height="56" fetchPriority="high" />
-          <span><strong>ISEF</strong><small>Ice Sport Exchange Foundation</small></span>
-        </a>
+        <Brand />
         <nav className="desktop-nav" aria-label={copy.openMenu}>{copy.nav.map((label, index) =>
           <a key={sectionIds[index]} href={`#${sectionIds[index]}`}>{label}</a>)}</nav>
         <LanguagePicker language={language} onChange={changeLanguage} copy={copy} />
@@ -258,7 +262,7 @@ export default function App() {
       <BiographyDialog selected={selectedPerson} copy={copy} language={language} onSelect={setSelectedPerson} onClose={() => setSelectedPerson(null)} />
 
       <footer className="footer"><div className="container footer-inner"><div className="footer-info">
-        <a href="#home" className="footer-brand">ISEF</a><p>{copy.foundationName}</p><p>{copy.address}</p>
+        <Brand footer /><p>{copy.foundationName}</p><p>{copy.address}</p>
       </div><p className="copyright">© 2026 Ice Sport Exchange Foundation</p></div></footer>
     </div>
   </MotionConfig></LazyMotion>
