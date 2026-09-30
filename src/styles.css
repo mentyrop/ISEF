@@ -239,6 +239,12 @@ html.telegram-browser,html.telegram-browser body{height:100%;overflow:hidden;ove
 .experts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
 .experts .portrait{width:112px;height:112px;margin:0 auto 22px}
 .experts .person h3{font-size:15px}
+@media(min-width:1024px){
+  .experts .person{display:flex;flex-direction:column}
+  .experts .person>div{display:flex;flex:1;flex-direction:column;align-items:center}
+  .experts .person p{margin-bottom:14px}
+  .experts .person-open{margin-top:auto}
+}
 .governance{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:48px;border-top:1px solid var(--team-line)}
 .governance article{position:relative;padding-top:28px}
 .governance article::before{content:'';position:absolute;top:-5px;left:0;width:9px;height:9px;border:1px solid #aecde685;border-radius:50%;background:var(--navy)}
