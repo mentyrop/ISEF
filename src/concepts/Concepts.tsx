@@ -3,6 +3,7 @@ import { LazyMotion, domAnimation, m, MotionConfig, useReducedMotion, useScroll,
 import { ArrowUpRight, ArrowDown, ArrowRight, ArrowUp, Menu, X, Plus, ChevronLeft, ChevronRight, Globe2, MoveUpRight } from 'lucide-react'
 import { asset, content, flags, photos, portraits, sectionIds, mapUrl, type Copy, type Language } from '../content'
 import { conceptIds, conceptNames, conceptCopy, type Concept, type ConceptCopy } from './copy'
+import ContactMap from '../ContactMap'
 
 const base = import.meta.env.BASE_URL
 const countryCodes = ['RS', 'KZ', 'AE', 'EG', 'MX', 'IN', 'CN', 'TH', 'ZA']
@@ -191,10 +192,10 @@ function Gallery({ copy, ui }: { copy: Copy; ui: ConceptCopy }) {
   </div></section>
 }
 
-function Contacts({ copy, ui }: { copy: Copy; ui: ConceptCopy }) {
+function Contacts({ copy, ui, language }: { copy: Copy; ui: ConceptCopy; language: Language }) {
   return <section className="c-contacts c-section" id="contacts"><div className="c-wrap"><Reveal className="c-contact-head"><div><p className="c-kicker">06 / {copy.contactsTitle}</p><h2>{ui.contact}</h2></div><a className="c-contact-arrow" href="mailto:info@glazov.me" aria-label={copy.email}><MoveUpRight strokeWidth={1} /></a></Reveal>
     <Reveal className="c-contact-grid"><div><p className="c-contact-intro">{copy.contactsText}</p><address><a className="c-contact-email" href="mailto:info@glazov.me">info@glazov.me<ArrowUpRight size={22} /></a><a className="c-contact-phone" href="tel:+79995149199">+7 999 514-91-99</a><a className="c-contact-address" href={mapUrl} target="_blank" rel="noopener noreferrer">{copy.address}<ArrowUpRight size={17} /></a></address></div>
-      <a className="c-map" href={mapUrl} target="_blank" rel="noopener noreferrer" aria-label={copy.openMap}><img src={asset('2d17b.png')} alt={copy.address} width="450" height="278" loading="lazy" /><span>{copy.openMap}<ArrowUpRight size={16} /></span></a></Reveal>
+      <a className="c-map" href={mapUrl} target="_blank" rel="noopener noreferrer" aria-label={copy.openMap}><ContactMap language={language} address={copy.address} /><span>{copy.openMap}<ArrowUpRight size={16} /></span></a></Reveal>
     <footer className="c-footer"><a href="#home" className="c-footer-brand">ISEF<span>ICE SPORT EXCHANGE FOUNDATION</span></a><p>{copy.foundationName}</p><span>© 2026 ISEF</span><a href="#home" className="c-footer-top" aria-label={ui.top}><ArrowUp size={20} /></a></footer>
   </div></section>
 }
@@ -231,7 +232,7 @@ export default function Concepts() {
   return <LazyMotion features={domAnimation}><MotionConfig reducedMotion="user"><div className={`c-site c-${concept}`}>
     <a className="c-skip" href="#main">{copy.skip}</a><ConceptBar concept={concept} language={language} ui={ui} /><Header copy={copy} language={language} onLanguage={setLanguage} />
     <main id="main"><Hero concept={concept} copy={copy} ui={ui} /><CountryRibbon copy={copy} ui={ui} /><Intro copy={copy} ui={ui} />
-      {order.map(key => <div className={`c-section-slot c-slot-${key}`} key={key}>{sections[key]}</div>)}<Contacts copy={copy} ui={ui} />
+      {order.map(key => <div className={`c-section-slot c-slot-${key}`} key={key}>{sections[key]}</div>)}<Contacts copy={copy} ui={ui} language={language} />
     </main>
   </div></MotionConfig></LazyMotion>
 }

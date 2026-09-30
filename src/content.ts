@@ -54,7 +54,7 @@ export const content: Record<Language, Copy> = {
     ],
     galleryTitle: 'Фотографии', photoAlts: ['Хоккеисты борются за шайбу во время матча', 'Тренер обсуждает игру с командой на скамейке', 'Общее фото хоккейных команд на ледовой арене'],
     contactsTitle: 'Контакты', contactsText: 'Чтобы обсудить сотрудничество, напишите нам на почту или позвоните.',
-    email: 'Почта', phone: 'Телефон', addressLabel: 'Адрес', address: 'Санкт-Петербург, Невский проспект, 153',
+    email: 'Почта', phone: 'Телефон', addressLabel: 'Адрес', address: 'Санкт-Петербург, Малый проспект Васильевского острова, 64к1',
     foundationName: 'Фонд развития международного сотрудничества ледовых видов спорта',
     openMap: 'Открыть в Google Maps', skip: 'Перейти к содержимому', openMenu: 'Открыть меню', close: 'Закрыть',
     openPhoto: 'Открыть фотографию', previous: 'Предыдущая фотография', next: 'Следующая фотография', languageLabel: 'Язык сайта',
@@ -101,7 +101,7 @@ export const content: Record<Language, Copy> = {
     ],
     galleryTitle: 'Photos', photoAlts: ['Hockey players competing for the puck during a match', 'A coach discussing the game with the team on the bench', 'Hockey teams posing together on the ice rink'],
     contactsTitle: 'Contact', contactsText: 'To discuss working together, send us an email or give us a call.',
-    email: 'Email', phone: 'Phone', addressLabel: 'Address', address: '153 Nevsky Prospekt, Saint Petersburg',
+    email: 'Email', phone: 'Phone', addressLabel: 'Address', address: '64 Maly Prospekt, Building 1, Vasilyevsky Island, Saint Petersburg',
     foundationName: 'Foundation for the development of international cooperation in ice sports',
     openMap: 'Open in Google Maps', skip: 'Skip to content', openMenu: 'Open menu', close: 'Close',
     openPhoto: 'Open photo', previous: 'Previous photo', next: 'Next photo', languageLabel: 'Website language',
@@ -148,7 +148,7 @@ export const content: Record<Language, Copy> = {
     ],
     galleryTitle: 'Fotos', photoAlts: ['Jugadores de hockey disputando el disco durante un partido', 'Un entrenador hablando con su equipo en el banquillo', 'Foto de los equipos de hockey en la pista de hielo'],
     contactsTitle: 'Contacto', contactsText: 'Para hablar de una posible colaboración, escríbenos o llámanos.',
-    email: 'Correo', phone: 'Teléfono', addressLabel: 'Dirección', address: 'Nevsky Prospekt, 153, San Petersburgo',
+    email: 'Correo', phone: 'Teléfono', addressLabel: 'Dirección', address: 'Maly Prospekt, 64, edificio 1, isla Vasílievski, San Petersburgo',
     foundationName: 'Fundación para el desarrollo de la cooperación internacional en los deportes de hielo',
     openMap: 'Abrir en Google Maps', skip: 'Ir al contenido', openMenu: 'Abrir menú', close: 'Cerrar',
     openPhoto: 'Abrir foto', previous: 'Foto anterior', next: 'Foto siguiente', languageLabel: 'Idioma del sitio',
@@ -162,4 +162,4 @@ export const photos = ['218e8.png', '39df7.png', 'cbe9e.png']
 export const asset = (filename: string) => /\.(png|jpe?g)$/.test(filename)
   ? `${import.meta.env.BASE_URL}optimized/${filename.replace(/\.(png|jpe?g)$/, '.webp')}`
   : `${import.meta.env.BASE_URL}assets/${filename}`
-export const mapUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Санкт-Петербург, Невский проспект, 153')
+export const mapUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(content.ru.address)
