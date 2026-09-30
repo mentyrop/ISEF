@@ -18,8 +18,7 @@ export const biographyLabels = {
   es: { open: 'Leer biografía', biography: 'Biografía', leadership: 'Dirección', experts: 'Expertos', previous: 'Perfil anterior', next: 'Siguiente perfil' },
 }
 
-// Biographies supplied by the client. Sergey's short entry uses the two facts
-// supplied in Alexander Glazov's biography until a separate text is available.
+// Biographies supplied by the client, with English and Spanish translations.
 export const biographies: Record<Language, Record<PersonId, string[]>> = {
   ru: {
     'vladimir-milyaev': [
@@ -32,9 +31,9 @@ export const biographies: Record<Language, Record<PersonId, string[]>> = {
       'Хоккей в семье: родственники отца Сергей и Юрий Глазовы играли за сборную СССР, Сергей участвовал в Суперсерии против клубов НХЛ.',
     ],
     'valery-afanasyev': [
-      'Тренер. С 1996 по 2001 год работал в Мексике по приглашению национальной федерации хоккея: главный тренер команды Mexico-Select, турниры в России, Финляндии, Канаде и США.',
-      'В Петербурге стал одним из основателей клуба «Серебряные львы», работал главным тренером в системе СКА. Среди воспитанников Николай Кныжов, игравший в НХЛ.',
-      'В 2021 году разработал концепцию хоккейной академии в Дубае.',
+      'Президент петербургского клуба «СКА-Звезда», который входит в Академию СКА.',
+      'С 1996 по 2001 год работал в Мексике по приглашению национальной федерации хоккея и возглавлял команду Mexico-Select.',
+      'Один из основателей клуба «Серебряные львы», работал главным тренером в системе СКА. Среди воспитанников Николай Кныжов, игравший в НХЛ. В 2021 году разработал концепцию хоккейной академии в Дубае.',
     ],
     'alexander-sazykin': [
       'Воспитанник СКА, тренировался с первой командой под руководством Бориса Михайлова. Тренирует с конца 2000-х.',
@@ -45,7 +44,11 @@ export const biographies: Record<Language, Record<PersonId, string[]>> = {
       'Воспитанник СКА, в составе команды своего года многократно выигрывал первенство Санкт-Петербурга. С отличием окончил тренерский факультет университета Лесгафта, тренирует со студенческих лет.',
       'Вместе с братом основал клуб SBS и выстроил в нём систему из нескольких любительских команд разного уровня. Тренировал команду «Чисто Питер» в Медиалиге.',
     ],
-    'sergey-glazov': ['Играл за сборную СССР по хоккею. Участвовал в Суперсерии против клубов НХЛ.'],
+    'sergey-glazov': [
+      'Воспитанник хоккейной школы ЦСКА. Начинал нападающим, позже играл в защите. В 1971 году в составе юниорской сборной СССР стал чемпионом Европы.',
+      'С 1971 по 1976 год выступал за ЦСКА: трижды чемпион СССР, обладатель Кубка СССР 1973 года, участник Суперсерии 1975/76 против клубов НХЛ. Играл за сборную СССР.',
+      'Сезон 1976/77 провёл в ленинградском СКА.',
+    ],
   },
   en: {
     'vladimir-milyaev': [
@@ -58,9 +61,9 @@ export const biographies: Record<Language, Record<PersonId, string[]>> = {
       'Hockey runs in the family: his father’s relatives Sergey and Yuri Glazov played for the USSR national team. Sergey took part in the Super Series against NHL clubs.',
     ],
     'valery-afanasyev': [
-      'A coach who worked in Mexico from 1996 to 2001 at the invitation of the national ice hockey federation. As head coach of Mexico-Select, he took the team to tournaments in Russia, Finland, Canada and the United States.',
-      'In Saint Petersburg, he co-founded the Silver Lions club and worked as a head coach within the SKA organisation. His former players include Nikolai Knyzhov, who played in the NHL.',
-      'In 2021, he developed a concept for a hockey academy in Dubai.',
+      'President of the Saint Petersburg club SKA-Zvezda, which is part of the SKA Academy.',
+      'From 1996 to 2001, he worked in Mexico at the invitation of the national ice hockey federation and led the Mexico-Select team.',
+      'A co-founder of the Silver Lions club, he worked as a head coach within the SKA organisation. His former players include Nikolai Knyzhov, who played in the NHL. In 2021, he developed a concept for a hockey academy in Dubai.',
     ],
     'alexander-sazykin': [
       'A product of the SKA system who trained with the first team under Boris Mikhailov. He has been coaching since the late 2000s.',
@@ -71,7 +74,11 @@ export const biographies: Record<Language, Record<PersonId, string[]>> = {
       'A product of the SKA system, he won the Saint Petersburg championship multiple times with his age-group team. He graduated with honours from the coaching faculty of Lesgaft University and has coached since his student years.',
       'Together with his brother, he founded SBS and developed a structure of amateur teams at different levels. He coached Chisto Piter in the Media League.',
     ],
-    'sergey-glazov': ['Played for the USSR national hockey team. Took part in the Super Series against NHL clubs.'],
+    'sergey-glazov': [
+      'A graduate of the CSKA hockey school. He began as a forward and later played in defence. In 1971, he won the European Championship with the USSR junior national team.',
+      'He played for CSKA from 1971 to 1976, winning three USSR championships and the 1973 USSR Cup, and taking part in the 1975/76 Super Series against NHL clubs. He also played for the USSR national team.',
+      'He spent the 1976/77 season with SKA Leningrad.',
+    ],
   },
   es: {
     'vladimir-milyaev': [
@@ -84,9 +91,9 @@ export const biographies: Record<Language, Record<PersonId, string[]>> = {
       'El hockey forma parte de su familia: Sergey y Yuri Glazov, parientes de su padre, jugaron en la selección de la URSS. Sergey participó en la Super Series contra clubes de la NHL.',
     ],
     'valery-afanasyev': [
-      'Entrenador. Trabajó en México de 1996 a 2001 por invitación de la federación nacional de hockey. Como entrenador principal de Mexico-Select, participó en torneos en Rusia, Finlandia, Canadá y Estados Unidos.',
-      'En San Petersburgo fue uno de los fundadores del club Silver Lions y trabajó como entrenador principal dentro de la organización del SKA. Entre sus alumnos se encuentra Nikolai Knyzhov, que jugó en la NHL.',
-      'En 2021 desarrolló el concepto de una academia de hockey en Dubái.',
+      'Presidente del club SKA-Zvezda de San Petersburgo, que forma parte de la Academia SKA.',
+      'De 1996 a 2001 trabajó en México por invitación de la federación nacional de hockey y dirigió el equipo Mexico-Select.',
+      'Uno de los fundadores del club Silver Lions, trabajó como entrenador principal dentro de la organización del SKA. Entre sus alumnos se encuentra Nikolai Knyzhov, que jugó en la NHL. En 2021 desarrolló el concepto de una academia de hockey en Dubái.',
     ],
     'alexander-sazykin': [
       'Formado en el SKA, entrenó con el primer equipo bajo la dirección de Boris Mikhailov. Es entrenador desde finales de la década de 2000.',
@@ -97,6 +104,10 @@ export const biographies: Record<Language, Record<PersonId, string[]>> = {
       'Formado en el SKA, ganó varias veces el campeonato de San Petersburgo con el equipo de su categoría de edad. Se graduó con honores en la facultad de formación de entrenadores de la Universidad Lesgaft y entrena desde sus años de estudiante.',
       'Junto con su hermano fundó el club SBS y creó una estructura de equipos aficionados de distintos niveles. Entrenó al equipo Chisto Piter en la Media League.',
     ],
-    'sergey-glazov': ['Jugó en la selección de hockey de la URSS. Participó en la Super Series contra clubes de la NHL.'],
+    'sergey-glazov': [
+      'Formado en la escuela de hockey del CSKA. Comenzó como delantero y más tarde jugó en defensa. En 1971 se proclamó campeón de Europa con la selección júnior de la URSS.',
+      'Jugó en el CSKA de 1971 a 1976: fue tres veces campeón de la URSS, ganó la Copa de la URSS de 1973 y participó en la Super Series de 1975/76 contra clubes de la NHL. También jugó en la selección de la URSS.',
+      'Disputó la temporada 1976/77 en el SKA de Leningrado.',
+    ],
   },
 }
