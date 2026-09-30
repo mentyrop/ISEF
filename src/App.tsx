@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { LazyMotion, domAnimation, m, MotionConfig, useReducedMotion } from 'motion/react'
 import { ArrowUpRight, ArrowDown, ChevronLeft, ChevronRight, Menu, X, Maximize2 } from 'lucide-react'
-import { asset, content, flags, mapUrl, photos, sectionIds, type Copy, type Language } from './content'
+import { asset, content, flags, mapUrl, sectionIds, type Copy, type Language } from './content'
+import { galleryPhotos as photos } from './gallery-photos'
 import { designCopy } from './design-copy'
 import BiographyDialog, { PersonPortrait } from './BiographyDialog'
 import { biographyLabels } from './biographies'
@@ -64,7 +65,7 @@ function Activities({ copy }: { copy: Copy }) {
   </div>
 }
 
-function Gallery({ copy, heading }: { copy: Copy; heading: string }) {
+function Gallery({ copy, heading, language }: { copy: Copy; heading: string; language: Language }) {
   const [selected, setSelected] = useState(0)
   const dialog = useRef<HTMLDialogElement>(null)
   const closeButton = useRef<HTMLButtonElement>(null)
@@ -79,9 +80,9 @@ function Gallery({ copy, heading }: { copy: Copy; heading: string }) {
   return <section id="photos" className="gallery-section" aria-labelledby="gallery-title"><div className="container">
     <Reveal className="section-heading"><div><p className="eyebrow">05 / {copy.galleryTitle}</p><h2 id="gallery-title">{heading}</h2></div></Reveal>
     <div className="gallery">
-    {photos.map((photo, index) => <button type="button" className={`gallery-photo photo-${index}`} key={photo}
-      onClick={() => open(index)} aria-label={`${copy.openPhoto}: ${copy.photoAlts[index]}`}>
-      <img src={asset(photo)} alt={copy.photoAlts[index]} loading="lazy" width={index === 0 ? 1180 : 590} height={index === 0 ? 1576 : 786} />
+    {photos.map((photo, index) => <button type="button" className={`gallery-photo photo-${index}`} key={photo.src}
+      onClick={() => open(index)} aria-label={`${copy.openPhoto}: ${photo.alt[language]}`}>
+      <img src={photo.src} alt={photo.alt[language]} loading="lazy" width={photo.width} height={photo.height} />
       <span className="photo-expand" aria-hidden="true"><Maximize2 size={22} /></span>
     </button>)}
     </div></div>
@@ -93,8 +94,8 @@ function Gallery({ copy, heading }: { copy: Copy; heading: string }) {
         if (event.key === 'ArrowRight') { event.preventDefault(); step(1) }
       }}>
       <button ref={closeButton} className="icon-button lightbox-close" onClick={close} aria-label={copy.close}><X /></button>
-      <figure><img src={asset(photos[selected])} alt={copy.photoAlts[selected]} />
-        <figcaption aria-live="polite">{copy.photoAlts[selected]} <span>{selected + 1} / {photos.length}</span></figcaption>
+      <figure><img src={photos[selected].src} alt={photos[selected].alt[language]} />
+        <figcaption aria-live="polite">{photos[selected].alt[language]} <span>{selected + 1} / {photos.length}</span></figcaption>
       </figure>
       <button className="icon-button lightbox-prev" onClick={() => step(-1)} aria-label={copy.previous}><ChevronLeft /></button>
       <button className="icon-button lightbox-next" onClick={() => step(1)} aria-label={copy.next}><ChevronRight /></button>
@@ -231,7 +232,7 @@ export default function App() {
             </Reveal>)}</div>
           </div></section>
 
-        <Gallery copy={copy} heading={design.galleryHeading} />
+        <Gallery copy={copy} heading={design.galleryHeading} language={language} />
 
         <section className="contacts" id="contacts" aria-labelledby="contacts-title"><div className="container contact-grid">
           <Reveal><p className="eyebrow">06 / {design.contactEyebrow}</p><h2 id="contacts-title">{copy.contactsTitle}</h2><p className="contact-intro">{copy.contactsText}</p>
