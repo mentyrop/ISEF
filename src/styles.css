@@ -216,19 +216,22 @@ html.telegram-browser,html.telegram-browser body{height:100%;overflow:hidden;ove
 .team h2{max-width:750px}
 .team-group{border-top:1px solid var(--team-line)}
 .leadership{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
-.person{position:relative;min-width:0;padding:30px 26px 36px;text-align:center;transition:background .2s}
-.person:hover,.person:focus-within{background:#aecde60a}
+.person{position:relative;min-width:0;padding:30px 26px 36px;text-align:center}
 .person+.person{border-left:1px solid var(--team-line)}
-.person-open{display:inline-flex;align-items:center;justify-content:center;min-height:34px;margin-top:14px;padding:6px 0;border:0;background:transparent;color:#9fc6e2;font-size:13px;font-weight:600;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px;transition:color .2s,text-decoration-color .2s,text-shadow .2s}
+.person-open{display:inline-flex;align-items:center;justify-content:center;min-height:34px;margin-top:14px;padding:6px 0;border:0;border-radius:0;background:transparent;box-shadow:none;appearance:none;-webkit-tap-highlight-color:transparent;color:#9fc6e2;font-size:13px;font-weight:600;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px;transition:color .2s,text-decoration-color .2s}
 .person-open::after{content:'';position:absolute;inset:0}
-.person:hover .person-open,.person-open:focus-visible{color:#e0f4ff;text-decoration-color:currentColor;text-shadow:0 0 12px #82c5f966}
-.person-open:focus-visible{outline:2px solid #82c5f9;outline-offset:3px}
+@media(hover:hover) and (pointer:fine){
+  .person:hover .person-open{color:#e0f4ff;text-decoration-color:currentColor}
+}
+/* Text-only focus feedback survives modal focus restoration without a card fill or box. */
+.person-open:active,.person-open:focus-visible{color:#e0f4ff;text-decoration-color:currentColor}
+.person-open:focus-visible{outline:none;text-decoration-thickness:2px}
 .leadership .person{display:flex;flex-direction:column;align-items:center;gap:20px}
 .portrait{width:132px;height:132px;border-radius:50%;flex:none}
 .portrait-frame{position:relative;display:block;overflow:hidden;background:#d4d8db}
 .portrait-frame>img{position:absolute;max-width:none;width:var(--portrait-width,100%);height:auto;left:var(--portrait-left,0%);top:var(--portrait-top,0%)}
 /* Individual framing keeps face scale and position consistent without altering originals. */
-.portrait-frame[data-person="vladimir-milyaev"]{--portrait-width:153.889%;--portrait-left:-24.722%;--portrait-top:-8.333%}
+.portrait-frame[data-person="vladimir-milyaev"]{--portrait-width:130%;--portrait-left:-10.5%;--portrait-top:0%}
 .portrait-frame[data-person="alexander-glazov"]{--portrait-width:160.469%;--portrait-left:-15.625%;--portrait-top:-25%}
 .portrait-frame[data-person="alexander-sazykin"]{--portrait-width:110%;--portrait-left:-1.25%;--portrait-top:-15%}
 .portrait-frame[data-person="alexey-sazykin"]{--portrait-width:197.647%;--portrait-left:-28.971%;--portrait-top:0%}
