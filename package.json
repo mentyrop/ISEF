@@ -9,6 +9,7 @@
     "dev": "vite --host 127.0.0.1",
     "prebuild": "node scripts/optimize-portraits.mjs",
     "build": "tsc -b && vite build",
+    "postbuild": "node scripts/build-language-pages.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "test": "playwright test",
     "typecheck": "tsc -b"

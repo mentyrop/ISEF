@@ -8,6 +8,7 @@ export default defineConfig({
     baseURL: 'http://127.0.0.1:4173',
     browserName: 'chromium',
     channel: 'chrome',
+    locale: 'ru-RU',
     reducedMotion: 'reduce',
     screenshot: 'only-on-failure',
   },

@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  // Relative URLs also work when GitHub Pages serves the site under /repository/.
-  base: './',
+  // Shared assets resolve from isef.pro on both / and the /ru/, /en/, /es/ pages.
+  base: '/',
   build: {
     rollupOptions: {
       input: { main: 'index.html', concepts: 'concepts.html' },

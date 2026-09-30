@@ -6,16 +6,7 @@ import { galleryPhotos as photos } from './gallery-photos'
 import { designCopy } from './design-copy'
 import BiographyDialog, { PersonPortrait } from './BiographyDialog'
 import { biographyLabels } from './biographies'
-
-function initialLanguage(): Language {
-  const query = new URLSearchParams(window.location.search).get('lang')
-  if (query === 'ru' || query === 'en' || query === 'es') return query
-  try {
-    const saved = localStorage.getItem('isef-language')
-    if (saved === 'en' || saved === 'es') return saved
-  } catch { /* The site also works when storage is unavailable. */ }
-  return 'ru'
-}
+import { initialLanguage, isLanguage, localizedUrl } from './language'
 
 function Reveal({ children, className = '', delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
   const reduce = useReducedMotion()
@@ -111,6 +102,19 @@ export default function App() {
   const copy = content[language]
   const design = designCopy[language]
 
+  const changeLanguage = (nextLanguage: Language) => {
+    try { localStorage.setItem('isef-language', nextLanguage) } catch { /* Storage is optional. */ }
+    const url = localizedUrl(window.location.href, nextLanguage)
+    if (url.href !== window.location.href) window.history.pushState(null, '', url)
+    setLanguage(nextLanguage)
+  }
+
+  useEffect(() => {
+    const restoreLanguage = () => setLanguage(initialLanguage())
+    window.addEventListener('popstate', restoreLanguage)
+    return () => window.removeEventListener('popstate', restoreLanguage)
+  }, [])
+
   useEffect(() => {
     const hash = window.location.hash
     if (!hash) return
@@ -130,11 +134,13 @@ export default function App() {
     document.querySelector('meta[name="description"]')?.setAttribute('content', copy.description)
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', copy.title)
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', copy.description)
-    try { localStorage.setItem('isef-language', language) } catch { /* Storage is optional. */ }
     const url = new URL(window.location.href)
-    if (language === 'ru') url.searchParams.delete('lang')
-    else url.searchParams.set('lang', language)
-    window.history.replaceState(null, '', url)
+    // Old shared links keep working and become the same shareable language URL.
+    if (isLanguage(url.searchParams.get('lang'))) {
+      window.history.replaceState(null, '', localizedUrl(url.href, language))
+    }
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', `https://isef.pro/${language}/`)
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', `https://isef.pro/${language}/`)
   }, [language, copy])
 
   const closeMenu = () => menuDialog.current?.close()
@@ -153,7 +159,7 @@ export default function App() {
         </a>
         <nav className="desktop-nav" aria-label={copy.openMenu}>{copy.nav.map((label, index) =>
           <a key={sectionIds[index]} href={`#${sectionIds[index]}`}>{label}</a>)}</nav>
-        <LanguagePicker language={language} onChange={setLanguage} copy={copy} />
+        <LanguagePicker language={language} onChange={changeLanguage} copy={copy} />
         <button className="mobile-language" onClick={openMenu} aria-label={copy.languageLabel}>{language.toUpperCase()}</button>
         <button className="icon-button menu-toggle" aria-label={copy.openMenu} aria-expanded={menuOpen} aria-controls="mobile-menu" onClick={openMenu}><Menu /></button>
     </div></header>
@@ -165,7 +171,7 @@ export default function App() {
         <nav>{copy.nav.map((label, index) => <a key={sectionIds[index]} href={`#${sectionIds[index]}`} onClick={closeMenu}>
           <span className="menu-index">0{index + 1}</span>{label}<ArrowUpRight size={22} />
         </a>)}</nav>
-        <LanguagePicker language={language} onChange={setLanguage} copy={copy} />
+        <LanguagePicker language={language} onChange={changeLanguage} copy={copy} />
         <a className="menu-email" href="mailto:info@glazov.me">info@glazov.me</a>
       </dialog>
 
