@@ -71,8 +71,8 @@ export const biographies: Record<Language, Record<PersonId, string[]>> = {
       'He has played in the Saint Petersburg Hockey League since its inaugural season and is a member of its Hall of Fame.',
     ],
     'alexey-sazykin': [
-      'A product of the SKA system, he won the Saint Petersburg championship multiple times with his age-group team. He graduated with honours from the coaching faculty of Lesgaft University and has coached since his student years.',
-      'Together with his brother, he founded SBS and developed a structure of amateur teams at different levels. He coached Chisto Piter in the Media League.',
+      'A product of the SKA system, he won the Saint Petersburg championship multiple times with his age-group team. He graduated with honours from the coach education faculty of Lesgaft University and has been coaching since his student years.',
+      'Together with his brother, he founded SBS and established a network of amateur teams at different levels within the club. He coached Chisto Piter in the Media League.',
     ],
     'sergey-glazov': [
       'A graduate of the CSKA hockey school. He began as a forward and later played in defence. In 1971, he won the European Championship with the USSR junior national team.',
@@ -83,7 +83,7 @@ export const biographies: Record<Language, Record<PersonId, string[]>> = {
   es: {
     'vladimir-milyaev': [
       'Empresario del sector de la construcción de San Petersburgo. Propietario de Tekhnika, empresa que lleva más de 20 años realizando instalaciones eléctricas.',
-      'Trabaja con la constructora general Petropolis, que desarrolla instalaciones industriales y energéticas llave en mano. Su cartera incluye unos 90 proyectos, entre ellos una planta de calderas de agua caliente para TGC-1 y el centro eléctrico Pravoberezhny.',
+      'Trabaja con el contratista general Petropolis, que construye instalaciones industriales y energéticas llave en mano. Su cartera incluye unos 90 proyectos, entre ellos una planta de calderas de agua caliente para TGC-1 y el centro eléctrico Pravoberezhny.',
     ],
     'alexander-glazov': [
       'Responsable de la estrategia, las comunicaciones y las relaciones con los socios de la fundación.',
@@ -92,17 +92,17 @@ export const biographies: Record<Language, Record<PersonId, string[]>> = {
     ],
     'valery-afanasyev': [
       'Presidente del club SKA-Zvezda de San Petersburgo, que forma parte de la Academia SKA.',
-      'De 1996 a 2001 trabajó en México por invitación de la federación nacional de hockey y dirigió el equipo Mexico-Select.',
+      'De 1996 a 2001 trabajó en México por invitación de la federación nacional de hockey sobre hielo y dirigió el equipo Mexico-Select.',
       'Uno de los fundadores del club Silver Lions, trabajó como entrenador principal dentro de la organización del SKA. Entre sus alumnos se encuentra Nikolai Knyzhov, que jugó en la NHL. En 2021 desarrolló el concepto de una academia de hockey en Dubái.',
     ],
     'alexander-sazykin': [
       'Formado en el SKA, entrenó con el primer equipo bajo la dirección de Boris Mikhailov. Es entrenador desde finales de la década de 2000.',
-      'Junto con su hermano fundó el club de deportes de hielo SBS, que ofrece hockey y patinaje artístico para niños a partir de los tres años y adultos en las pistas Yubileyny y Sever Park Arena. Es el entrenador sénior de los grupos de adultos del club.',
+      'Junto con su hermano fundó el club de deportes de hielo SBS, que ofrece hockey y patinaje artístico para niños a partir de los tres años y para adultos en las pistas Yubileyny y Sever Park Arena. Es el entrenador responsable de los grupos de adultos del club.',
       'Juega en la Liga de Hockey de San Petersburgo desde su primera temporada y forma parte de su Salón de la Fama.',
     ],
     'alexey-sazykin': [
-      'Formado en el SKA, ganó varias veces el campeonato de San Petersburgo con el equipo de su categoría de edad. Se graduó con honores en la facultad de formación de entrenadores de la Universidad Lesgaft y entrena desde sus años de estudiante.',
-      'Junto con su hermano fundó el club SBS y creó una estructura de equipos aficionados de distintos niveles. Entrenó al equipo Chisto Piter en la Media League.',
+      'Formado en el SKA, ganó varias veces el campeonato de San Petersburgo con el equipo de su categoría de edad. Se graduó con honores en la facultad de formación de entrenadores de la Universidad Lesgaft y ejerce como entrenador desde su etapa universitaria.',
+      'Junto con su hermano fundó el club SBS y creó una red de equipos aficionados de distintos niveles dentro del club. Entrenó al equipo Chisto Piter en la Media League.',
     ],
     'sergey-glazov': [
       'Formado en la escuela de hockey del CSKA. Comenzó como delantero y más tarde jugó en defensa. En 1971 se proclamó campeón de Europa con la selección júnior de la URSS.',

@@ -7,6 +7,7 @@ import { designCopy } from './design-copy'
 import BiographyDialog, { PersonPortrait } from './BiographyDialog'
 import { biographyLabels } from './biographies'
 import { initialLanguage, isLanguage, localizedUrl } from './language'
+import ContactMap from './ContactMap'
 
 function Brand({ footer = false }: { footer?: boolean }) {
   return <a className={`brand${footer ? ' footer-brand' : ''}`} href="#home" aria-label="ISEF — Ice Sport Exchange Foundation">
@@ -213,7 +214,7 @@ export default function App() {
 
         <div className="people-region">
           <section className="geography container" id="geography" aria-labelledby="geography-title">
-            <Reveal className="geography-intro"><div><p className="eyebrow">03 / ISEF WORLDWIDE</p><h2 id="geography-title">{copy.geographyTitle}</h2></div><p>{copy.geographyText}</p></Reveal>
+            <Reveal className="geography-intro"><div><p className="eyebrow">03 / {design.geographyEyebrow}</p><h2 id="geography-title">{copy.geographyTitle}</h2></div><p>{copy.geographyText}</p></Reveal>
             <div className="country-network">
               <ul className="country-grid">{copy.countries.map((name, index) => index === 4
                 ? <FeaturedCountry key={flags[index]}><Flag index={index} /><span>{name}</span></FeaturedCountry>
@@ -230,7 +231,7 @@ export default function App() {
           <section className="team" id="team" aria-labelledby="team-title">
             <div className="team-rink" aria-hidden="true" />
             <div className="container">
-            <Reveal className="section-heading"><div><p className="eyebrow">04 / ISEF TEAM</p><h2 id="team-title">{copy.teamTitle}</h2></div><p className="section-description">{design.teamIntro}</p></Reveal>
+            <Reveal className="section-heading"><div><p className="eyebrow">04 / {design.teamEyebrow}</p><h2 id="team-title">{copy.teamTitle}</h2></div><p className="section-description">{design.teamIntro}</p></Reveal>
             <div className="team-group" role="group" aria-label={biographyLabels[language].leadership}>
               <Reveal className="leadership">{[0, 1].map(index => <Person key={index} index={index} copy={copy} language={language} onOpen={setSelectedPerson} />)}</Reveal>
             </div>
@@ -253,7 +254,7 @@ export default function App() {
             </dl></address>
           </Reveal>
           <Reveal className="map-wrap"><a className="map-link" href={mapUrl} target="_blank" rel="noopener noreferrer" aria-label={copy.openMap}>
-            <img src={asset('2d17b.png')} alt={copy.address} width="688" height="426" loading="lazy" />
+            <ContactMap language={language} address={copy.address} />
             <span className="map-action">{copy.openMap}<ArrowUpRight size={18} /></span>
           </a></Reveal>
         </div></section>

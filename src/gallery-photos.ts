@@ -19,7 +19,7 @@ export const galleryPhotos = [
   { src: huddle, width: 960, height: 1280, alt: {
     ru: 'Тренеры и хоккеисты обсуждают игру у борта',
     en: 'Coaches and hockey players discussing the game by the boards',
-    es: 'Entrenadores y jugadores comentando el juego junto a la pista',
+    es: 'Entrenadores y jugadores comentando el juego junto a la valla de la pista',
   } },
   { src: bench, width: 960, height: 1280, alt: {
     ru: 'Тренер даёт указания команде на скамейке',

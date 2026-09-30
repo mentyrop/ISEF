@@ -44,7 +44,7 @@ test('language changes all content and survives reload', async ({ page }) => {
   await page.goto('/')
   await expect(page.locator('html')).toHaveAttribute('lang', 'es')
   await page.getByRole('button', { name: 'English', exact: true }).click()
-  await expect(page.locator('#contacts h2')).toHaveText('Contacts')
+  await expect(page.locator('#contacts h2')).toHaveText('Contact')
   await expect(page).toHaveTitle('ISEF — Connecting countries through ice')
 })
 
@@ -55,7 +55,7 @@ test('mobile menu supports navigation, language switching and Escape', async ({ 
   const menu = page.getByRole('dialog')
   await expect(menu).toBeVisible()
   await menu.getByRole('button', { name: 'English', exact: true }).click()
-  await menu.getByRole('link', { name: 'Contacts' }).click()
+  await menu.getByRole('link', { name: 'Contact' }).click()
   await expect(menu).not.toBeVisible()
   await expect(page).toHaveURL(/#contacts$/)
   await expect(page.locator('body')).not.toHaveClass('dialog-open')
