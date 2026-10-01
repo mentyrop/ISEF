@@ -22,8 +22,9 @@ export const biographyLabels = {
 export const biographies: Record<Language, Record<PersonId, string[]>> = {
   ru: {
     'vladimir-milyaev': [
-      'Предприниматель в строительной отрасли Санкт-Петербурга. Владелец ЗАО «Фирма „Техника“», которая больше 20 лет выполняет электромонтажные работы.',
-      'Работает с генподрядной компанией «Петрополис», которая строит промышленные и энергетические объекты под ключ: около 90 проектов, среди них водогрейная котельная для ТГК-1 и электрохаб «Правобережный».',
+      'Предприниматель, больше 25 лет работает в строительной отрасли.',
+      'Выпускник Санкт-Петербургского государственного университета, кандидат экономических наук, MBA.',
+      'Развивает несколько компаний, участвует в социальных проектах и поддерживает детский и взрослый спорт, в том числе любительскую хоккейную команду «Петротех».',
     ],
     'alexander-glazov': [
       'Отвечает за стратегию, коммуникации и работу с партнёрами фонда.',
@@ -52,8 +53,9 @@ export const biographies: Record<Language, Record<PersonId, string[]>> = {
   },
   en: {
     'vladimir-milyaev': [
-      'An entrepreneur in Saint Petersburg’s construction industry. Owner of Tekhnika, a company that has carried out electrical installation work for more than 20 years.',
-      'Works with general contractor Petropolis, which delivers turnkey industrial and energy facilities. Its portfolio includes around 90 projects, among them a hot-water boiler plant for TGC-1 and the Pravoberezhny electrical hub.',
+      'An entrepreneur with more than 25 years of experience in the construction industry.',
+      'A graduate of Saint Petersburg State University, he holds a Candidate of Sciences degree in Economics and an MBA.',
+      'He develops several businesses, takes part in social projects and supports youth and adult sports, including the amateur ice hockey team Petrotech.',
     ],
     'alexander-glazov': [
       'Responsible for the foundation’s strategy, communications and partner relations.',
@@ -82,8 +84,9 @@ export const biographies: Record<Language, Record<PersonId, string[]>> = {
   },
   es: {
     'vladimir-milyaev': [
-      'Empresario del sector de la construcción de San Petersburgo. Propietario de Tekhnika, empresa que lleva más de 20 años realizando instalaciones eléctricas.',
-      'Trabaja con el contratista general Petropolis, que construye instalaciones industriales y energéticas llave en mano. Su cartera incluye unos 90 proyectos, entre ellos una planta de calderas de agua caliente para TGC-1 y el centro eléctrico Pravoberezhny.',
+      'Empresario con más de 25 años de experiencia en el sector de la construcción.',
+      'Graduado de la Universidad Estatal de San Petersburgo, con el grado de Candidato en Ciencias Económicas y un MBA.',
+      'Desarrolla varias empresas, participa en proyectos sociales y apoya el deporte infantil y adulto, incluido el equipo de hockey sobre hielo aficionado Petrotech.',
     ],
     'alexander-glazov': [
       'Responsable de la estrategia, las comunicaciones y las relaciones con los socios de la fundación.',
