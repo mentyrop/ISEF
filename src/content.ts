@@ -36,7 +36,7 @@ export const content: Record<Language, Copy> = {
       { title: 'Партнеры', description: 'Работаем с федерациями, городскими властями, университетами и частными инвесторами.' },
     ],
     geographyTitle: 'География',
-    geographyText: 'ISEF (Фонд развития международного сотрудничества ледовых видов спорта) выстраивает партнерские отношения с федерациями, клубами и городами разных стран. Особое место среди них занимает Мексика: в стране есть ледовая инфраструктура и национальная лига, а российские тренеры работают в мексиканском хоккее с 1990-х годов.',
+    geographyText: 'ISEF (Фонд развития международного сотрудничества в ледовых видах спорта) выстраивает партнерские отношения с федерациями, клубами и городами разных стран. Особое место среди них занимает Мексика: в стране есть ледовая инфраструктура и национальная лига, а российские тренеры работают в мексиканском хоккее с 1990-х годов.',
     countries: ['Сербия', 'Казахстан', 'ОАЭ', 'Египет', 'Мексика', 'Индия', 'Китай', 'Таиланд', 'ЮАР'],
     teamTitle: 'Руководство и эксперты',
     people: [
@@ -55,7 +55,7 @@ export const content: Record<Language, Copy> = {
     galleryTitle: 'Фотографии', photoAlts: ['Хоккеисты борются за шайбу во время матча', 'Тренер обсуждает игру с командой на скамейке', 'Общее фото хоккейных команд на ледовой арене'],
     contactsTitle: 'Контакты', contactsText: 'Чтобы обсудить сотрудничество, напишите нам на почту или позвоните.',
     email: 'Почта', phone: 'Телефон', addressLabel: 'Адрес', address: 'Санкт-Петербург, Малый проспект Васильевского острова, 64к1',
-    foundationName: 'Фонд развития международного сотрудничества ледовых видов спорта',
+    foundationName: 'Фонд развития международного сотрудничества в ледовых видах спорта',
     openMap: 'Открыть в Google Maps', skip: 'Перейти к содержимому', openMenu: 'Открыть меню', close: 'Закрыть',
     openPhoto: 'Открыть фотографию', previous: 'Предыдущая фотография', next: 'Следующая фотография', languageLabel: 'Язык сайта',
   },
@@ -83,7 +83,7 @@ export const content: Record<Language, Copy> = {
       { title: 'Partners', description: 'We work with federations, city authorities, universities and private investors.' },
     ],
     geographyTitle: 'Geography',
-    geographyText: 'ISEF (Ice Sport Exchange Foundation) builds partnerships with federations, clubs and cities around the world. Mexico holds a special place: the country has ice rinks and a national league, and Russian coaches have been working in Mexican ice hockey since the 1990s.',
+    geographyText: 'ISEF (Foundation for the development of international cooperation in ice sports) builds partnerships with federations, clubs and cities around the world. Mexico holds a special place: the country has ice rinks and a national league, and Russian coaches have been working in Mexican ice hockey since the 1990s.',
     countries: ['Serbia', 'Kazakhstan', 'UAE', 'Egypt', 'Mexico', 'India', 'China', 'Thailand', 'South Africa'],
     teamTitle: 'Leadership and experts',
     people: [
@@ -130,7 +130,7 @@ export const content: Record<Language, Copy> = {
       { title: 'Socios', description: 'Colaboramos con federaciones, autoridades municipales, universidades e inversores privados.' },
     ],
     geographyTitle: 'Geografía',
-    geographyText: 'ISEF (Ice Sport Exchange Foundation) establece alianzas con federaciones, clubes y ciudades de distintos países. México ocupa un lugar especial: cuenta con pistas de hielo y una liga nacional, y los entrenadores rusos trabajan en el hockey sobre hielo mexicano desde los años noventa.',
+    geographyText: 'ISEF (Fundación para el desarrollo de la cooperación internacional en los deportes de hielo) establece alianzas con federaciones, clubes y ciudades de distintos países. México ocupa un lugar especial: cuenta con pistas de hielo y una liga nacional, y los entrenadores rusos trabajan en el hockey sobre hielo mexicano desde los años noventa.',
     countries: ['Serbia', 'Kazajistán', 'EAU', 'Egipto', 'México', 'India', 'China', 'Tailandia', 'Sudáfrica'],
     teamTitle: 'Dirección y expertos',
     people: [

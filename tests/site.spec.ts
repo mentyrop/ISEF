@@ -97,7 +97,7 @@ test('every rendered image loads locally and contact links work', async ({ page 
     valid: (img as HTMLImageElement).naturalWidth > 0,
   })))
   expect(images.every(img => img.valid && img.src.startsWith('http://127.0.0.1:4173/'))).toBe(true)
-  await expect(page.locator('address a[href="mailto:info@glazov.me"]')).toBeAttached()
+  await expect(page.locator('address a[href="mailto:office@isef.pro"]')).toBeAttached()
   await expect(page.locator('address a[href="tel:+79995149199"]')).toBeAttached()
   await expect(page.locator('.map-link')).toHaveAttribute('href', /google\.com\/maps\/search\/\?api=1&query=/)
 })

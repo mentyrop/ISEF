@@ -177,7 +177,7 @@ export default function App() {
           <span className="menu-index">0{index + 1}</span>{label}<ArrowUpRight size={22} />
         </a>)}</nav>
         <LanguagePicker language={language} onChange={changeLanguage} copy={copy} />
-        <a className="menu-email" href="mailto:info@glazov.me">info@glazov.me</a>
+        <a className="menu-email" href="mailto:office@isef.pro">office@isef.pro</a>
       </dialog>
 
       <main id="main">
@@ -248,7 +248,7 @@ export default function App() {
         <section className="contacts" id="contacts" aria-labelledby="contacts-title"><div className="container contact-grid">
           <Reveal><p className="eyebrow">06 / {design.contactEyebrow}</p><h2 id="contacts-title">{copy.contactsTitle}</h2><p className="contact-intro">{copy.contactsText}</p>
             <address><dl>
-              <div><dt>{copy.email}</dt><dd><a href="mailto:info@glazov.me">info@glazov.me</a></dd></div>
+              <div><dt>{copy.email}</dt><dd><a href="mailto:office@isef.pro">office@isef.pro</a></dd></div>
               <div><dt>{copy.phone}</dt><dd><a href="tel:+79995149199">+7 999 514-91-99</a></dd></div>
               <div><dt>{copy.addressLabel}</dt><dd><a href={mapUrl} target="_blank" rel="noopener noreferrer">{copy.address}</a></dd></div>
             </dl></address>

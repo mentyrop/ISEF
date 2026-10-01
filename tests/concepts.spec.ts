@@ -72,7 +72,7 @@ for (const design of concepts) {
       await Promise.all(images.map(image => image.decode()))
     })
     expect(await page.locator('img').evaluateAll(images => images.every(i => (i as HTMLImageElement).naturalWidth > 0 && new URL((i as HTMLImageElement).currentSrc).origin === location.origin))).toBe(true)
-    await expect(page.locator('address a[href="mailto:info@glazov.me"]')).toBeVisible()
+    await expect(page.locator('address a[href="mailto:office@isef.pro"]')).toBeVisible()
     await expect(page.locator('address a[href="tel:+79995149199"]')).toBeVisible()
     await expect(page.locator('.c-map')).toHaveAttribute('href', /google\.com\/maps\/search\/\?api=1&query=/)
     await page.locator('.c-header').getByRole('button', { name: 'English', exact: true }).click()
