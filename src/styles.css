@@ -285,10 +285,10 @@ dl>div:last-child dd{font-size:14px;color:#c5d1e3}
 .map-action{padding:18px 20px;background:#18283e;border-top:1px solid #d2ddec22;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px;transition:background .2s}
 .map-link:hover .map-action{background:var(--red)}
 .footer{background:var(--navy);color:#b4c2d5;padding:30px 0}
-.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:45px}
+.footer-inner{display:flex;align-items:flex-end;justify-content:space-between;gap:45px}
 .footer-brand{display:inline-flex;color:#eef3f8;margin-bottom:10px}
 .footer-info p{font-size:11px;max-width:470px;line-height:1.6;color:#8c9db4}
-.footer-info p+p{margin-top:5px}.copyright{font-size:11px;white-space:nowrap;color:#8c9db4}
+.footer-info p+p{margin-top:5px}.copyright{font-size:11px;line-height:1.6;white-space:nowrap;color:#8c9db4}
 
 .mobile-menu{--menu-padding:26px;position:fixed;inset:0 0 0 auto;margin:0;max-height:none;height:100dvh;max-width:100%;width:440px;padding:calc(var(--menu-padding) + var(--safe-top)) max(var(--menu-padding),var(--safe-right)) calc(var(--menu-padding) + var(--safe-bottom)) max(var(--menu-padding),var(--safe-left));color:#eef3f8;background:var(--navy);overflow-y:auto;overscroll-behavior:contain}
 .mobile-menu::backdrop{background:#02091caa;backdrop-filter:blur(8px)}
