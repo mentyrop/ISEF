@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { LazyMotion, domAnimation, m, MotionConfig, useReducedMotion } from 'motion/react'
 import { ArrowUpRight, ArrowDown, ChevronLeft, ChevronRight, Menu, X, Maximize2 } from 'lucide-react'
-import { asset, content, flags, mapUrl, sectionIds, type Copy, type Language } from './content'
+import { asset, content, countryIds, flags, mapUrl, sectionIds, type Copy, type CountryId, type Language } from './content'
 import { galleryPhotos as photos } from './gallery-photos'
 import { designCopy } from './design-copy'
 import BiographyDialog, { PersonPortrait } from './BiographyDialog'
@@ -35,13 +35,36 @@ function Flag({ index, label = '' }: { index: number; label?: string }) {
   return <span className={`flag flag-${index}`}><img src={asset(flags[index])} alt={label} loading="lazy" width="70" height="46" /></span>
 }
 
-function FeaturedCountry({ children }: { children: ReactNode }) {
-  const [visible, setVisible] = useState(false)
-  return <m.li className={`country country-featured${visible ? ' country-featured-visible' : ''}`}
-    onViewportEnter={() => setVisible(true)} onViewportLeave={() => setVisible(false)}
-    viewport={{ amount: 0.65, margin: '0px 0px -24px 0px' }}>
-    {children}
-  </m.li>
+function Geography({ copy, eyebrow, countryLabel }: { copy: Copy; eyebrow: string; countryLabel: string }) {
+  const [selected, setSelected] = useState<CountryId>('mexico')
+  const [mexicoVisible, setMexicoVisible] = useState(false)
+  return <section className="geography container" id="geography" aria-labelledby="geography-title">
+    <Reveal className="geography-intro">
+      <div><p className="eyebrow">03 / {eyebrow}</p><h2 id="geography-title">{copy.geographyTitle}</h2></div>
+      <div className="geography-copy">
+        <p>{copy.geographyIntro}</p>
+        <div className="country-description">
+          <p id="country-description" aria-live="polite" aria-atomic="true">{copy.countryDescriptions[selected]}</p>
+          {/* Reserve the tallest description at every width so the country buttons stay in place. */}
+          {countryIds.map(id => <p className="country-description-size" key={id} aria-hidden="true">{copy.countryDescriptions[id]}</p>)}
+        </div>
+      </div>
+    </Reveal>
+    <div className="country-network">
+      <ul className="country-grid" aria-label={countryLabel}>{countryIds.map((id, index) => <li key={id}>
+        <m.button type="button" className={`country${id === 'mexico' ? ` country-featured${mexicoVisible ? ' country-featured-visible' : ''}` : ''}`}
+          aria-pressed={selected === id} aria-controls="country-description" onClick={() => setSelected(id)}
+          onViewportEnter={id === 'mexico' ? () => setMexicoVisible(true) : undefined}
+          onViewportLeave={id === 'mexico' ? () => setMexicoVisible(false) : undefined}
+          viewport={{ amount: 0.65, margin: '0px 0px -24px 0px' }}>
+          <Flag index={index} /><span>{copy.countries[index]}</span>
+        </m.button>
+      </li>)}</ul>
+      <div className="country-connections" aria-hidden="true">
+        {flags.slice(1).map(flag => <img key={flag} src={asset('aafa5.svg')} alt="" />)}
+      </div>
+    </div>
+  </section>
 }
 
 function Person({ index, copy, language, onOpen }: { index: number; copy: Copy; language: Language; onOpen: (index: number) => void }) {
@@ -213,19 +236,7 @@ export default function App() {
         </section>
 
         <div className="people-region">
-          <section className="geography container" id="geography" aria-labelledby="geography-title">
-            <Reveal className="geography-intro"><div><p className="eyebrow">03 / {design.geographyEyebrow}</p><h2 id="geography-title">{copy.geographyTitle}</h2></div><p>{copy.geographyText}</p></Reveal>
-            <div className="country-network">
-              <ul className="country-grid">{copy.countries.map((name, index) => index === 4
-                ? <FeaturedCountry key={flags[index]}><Flag index={index} /><span>{name}</span></FeaturedCountry>
-                : <li className="country" key={flags[index]}><Flag index={index} /><span>{name}</span></li>
-              )}</ul>
-              <div className="country-connections" aria-hidden="true">
-                {flags.slice(1).map(flag => <img key={flag} src={asset('aafa5.svg')} alt="" />)}
-              </div>
-            </div>
-          </section>
-
+          <Geography copy={copy} eyebrow={design.geographyEyebrow} countryLabel={design.countryLabel} />
         </div>
 
           <section className="team" id="team" aria-labelledby="team-title">

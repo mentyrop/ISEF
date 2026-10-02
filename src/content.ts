@@ -1,10 +1,12 @@
 export type Language = 'ru' | 'en' | 'es'
+export const countryIds = ['serbia', 'kazakhstan', 'uae', 'egypt', 'mexico', 'india', 'china', 'thailand', 'south-africa'] as const
+export type CountryId = typeof countryIds[number]
 type Item = { title: string; description: string }
 export type Copy = {
   title: string; description: string; nav: string[]; heroTitle: string; heroText: string;
   aboutButton: string; contactButton: string; activitiesTitle: string; activities: Item[];
   missionLabel: string; missionLead: string; missionRest: string; missionText: string; pillars: Item[];
-  geographyTitle: string; geographyText: string; countries: string[]; teamTitle: string;
+  geographyTitle: string; geographyIntro: string; countryDescriptions: Record<CountryId, string>; countries: string[]; teamTitle: string;
   people: { name: string; role: string }[]; governance: Item[]; galleryTitle: string; photoAlts: string[];
   contactsTitle: string; contactsText: string; email: string; phone: string; addressLabel: string;
   address: string; foundationName: string; openMap: string; skip: string; openMenu: string;
@@ -36,7 +38,18 @@ export const content: Record<Language, Copy> = {
       { title: 'Партнеры', description: 'Работаем с федерациями, городскими властями, университетами и частными инвесторами.' },
     ],
     geographyTitle: 'География',
-    geographyText: 'ISEF (Фонд развития международного сотрудничества в ледовых видах спорта) выстраивает партнерские отношения с федерациями, клубами и городами разных стран. Особое место среди них занимает Мексика: в стране есть ледовая инфраструктура и национальная лига, а российские тренеры работают в мексиканском хоккее с 1990-х годов.',
+    geographyIntro: 'ISEF (Фонд развития международного сотрудничества в ледовых видах спорта) выстраивает партнерские отношения с федерациями, клубами и городами разных стран.',
+    countryDescriptions: {
+      'serbia': 'Среди них Сербия: в стране есть национальная хоккейная лига, а белградские клубы «Црвена звезда» и «Партизан» ведут свою историю с 1940-х годов.',
+      'kazakhstan': 'Среди них Казахстан: в стране больше 40 крытых катков и свой национальный чемпионат, а «Барыс» из Астаны с 2008 года играет в КХЛ.',
+      'uae': 'Среди них ОАЭ: в стране больше десяти крытых катков и своя хоккейная лига, а в 2021 году в Дубае прошёл матч регулярного чемпионата КХЛ между «Ак Барсом» и «Авангардом».',
+      'egypt': 'Среди них Египет: в Каире в хоккей играют с 2002 года на небольших катках в торговых центрах, а в 2023 году сборная страны сыграла на Кубке арабских стран.',
+      'mexico': 'Особое место среди них занимает Мексика: в стране есть ледовая инфраструктура и национальная лига, а российские тренеры работают в мексиканском хоккее с 1990-х годов.',
+      'india': 'Среди них Индия: центр индийского хоккея находится в Ладакхе, и в августе 2026 года в Лехе открылся первый в регионе каток международного уровня с круглогодичным льдом.',
+      'china': 'Среди них Китай: перед Олимпиадой в Пекине в стране было уже больше 650 стандартных катков, а китайский клуб с 2016 года играет в КХЛ и сейчас проводит домашние матчи в Петербурге.',
+      'thailand': 'Среди них Таиланд: в 2022 году в Бангкоке открылась арена международного размера 60 на 30 метров, а сборные страны выигрывали азиатские турниры IIHF среди юниоров и женщин.',
+      'south-africa': 'Среди них ЮАР: в хоккей здесь играют с 1930-х годов, в IIHF страна входит с 1937-го, а Кейптаун регулярно принимает турниры чемпионата мира.',
+    },
     countries: ['Сербия', 'Казахстан', 'ОАЭ', 'Египет', 'Мексика', 'Индия', 'Китай', 'Таиланд', 'ЮАР'],
     teamTitle: 'Руководство и эксперты',
     people: [
@@ -83,7 +96,18 @@ export const content: Record<Language, Copy> = {
       { title: 'Partners', description: 'We work with federations, city authorities, universities and private investors.' },
     ],
     geographyTitle: 'Geography',
-    geographyText: 'ISEF (Foundation for the development of international cooperation in ice sports) builds partnerships with federations, clubs and cities around the world. Mexico holds a special place: the country has ice rinks and a national league, and Russian coaches have been working in Mexican ice hockey since the 1990s.',
+    geographyIntro: 'ISEF (Foundation for the development of international cooperation in ice sports) builds partnerships with federations, clubs and cities around the world.',
+    countryDescriptions: {
+      'serbia': 'Serbia is one of them: the country has a national ice hockey league, and Belgrade clubs Crvena zvezda and Partizan trace their history back to the 1940s.',
+      'kazakhstan': 'Kazakhstan is one of them: the country has more than 40 indoor ice rinks and its own national championship, while Astana’s Barys has played in the KHL since 2008.',
+      'uae': 'The UAE is one of them: the country has more than ten indoor ice rinks and its own ice hockey league. In 2021, Dubai hosted a KHL regular-season game between Ak Bars and Avangard.',
+      'egypt': 'Egypt is one of them: ice hockey has been played in Cairo since 2002 on small rinks in shopping centres, and the national team competed in the Arab Cup in 2023.',
+      'mexico': 'Mexico holds a special place: the country has ice rinks and a national league, and Russian coaches have been working in Mexican ice hockey since the 1990s.',
+      'india': 'India is one of them: Ladakh is the heart of Indian ice hockey, and in August 2026, the region’s first international-standard rink with year-round ice opened in Leh.',
+      'china': 'China is one of them: the country already had more than 650 standard ice rinks before the Beijing Olympics. A Chinese club has played in the KHL since 2016 and currently plays its home games in Saint Petersburg.',
+      'thailand': 'Thailand is one of them: an international-sized 60-by-30-metre arena opened in Bangkok in 2022, and the country’s junior and women’s national teams have won IIHF Asian tournaments.',
+      'south-africa': 'South Africa is one of them: ice hockey has been played here since the 1930s, the country has been an IIHF member since 1937, and Cape Town regularly hosts World Championship tournaments.',
+    },
     countries: ['Serbia', 'Kazakhstan', 'UAE', 'Egypt', 'Mexico', 'India', 'China', 'Thailand', 'South Africa'],
     teamTitle: 'Leadership and experts',
     people: [
@@ -130,7 +154,18 @@ export const content: Record<Language, Copy> = {
       { title: 'Socios', description: 'Colaboramos con federaciones, autoridades municipales, universidades e inversores privados.' },
     ],
     geographyTitle: 'Geografía',
-    geographyText: 'ISEF (Fundación para el desarrollo de la cooperación internacional en los deportes de hielo) establece alianzas con federaciones, clubes y ciudades de distintos países. México ocupa un lugar especial: cuenta con pistas de hielo y una liga nacional, y los entrenadores rusos trabajan en el hockey sobre hielo mexicano desde los años noventa.',
+    geographyIntro: 'ISEF (Fundación para el desarrollo de la cooperación internacional en los deportes de hielo) establece alianzas con federaciones, clubes y ciudades de distintos países.',
+    countryDescriptions: {
+      'serbia': 'Entre ellos está Serbia: el país cuenta con una liga nacional de hockey sobre hielo, y los clubes de Belgrado Crvena zvezda y Partizan se remontan a la década de 1940.',
+      'kazakhstan': 'Entre ellos está Kazajistán: el país cuenta con más de 40 pistas de hielo cubiertas y su propio campeonato nacional, y el Barys de Astaná juega en la KHL desde 2008.',
+      'uae': 'Entre ellos están los Emiratos Árabes Unidos: el país cuenta con más de diez pistas de hielo cubiertas y su propia liga de hockey sobre hielo. En 2021, Dubái acogió un partido de la temporada regular de la KHL entre Ak Bars y Avangard.',
+      'egypt': 'Entre ellos está Egipto: en El Cairo se juega al hockey sobre hielo desde 2002 en pequeñas pistas de centros comerciales, y en 2023 la selección nacional participó en la Copa Árabe.',
+      'mexico': 'México ocupa un lugar especial: cuenta con pistas de hielo y una liga nacional, y los entrenadores rusos trabajan en el hockey sobre hielo mexicano desde los años noventa.',
+      'india': 'Entre ellos está India: Ladakh es el centro del hockey sobre hielo del país, y en agosto de 2026 se inauguró en Leh la primera pista de la región de nivel internacional con hielo durante todo el año.',
+      'china': 'Entre ellos está China: antes de los Juegos Olímpicos de Pekín, el país ya contaba con más de 650 pistas de hielo de tamaño estándar. Un club chino juega en la KHL desde 2016 y actualmente disputa sus partidos como local en San Petersburgo.',
+      'thailand': 'Entre ellos está Tailandia: en 2022 se inauguró en Bangkok una pista de dimensiones internacionales, de 60 por 30 metros, y las selecciones nacionales júnior y femenina han ganado torneos asiáticos de la IIHF.',
+      'south-africa': 'Entre ellos está Sudáfrica: el hockey sobre hielo se practica aquí desde la década de 1930, el país es miembro de la IIHF desde 1937 y Ciudad del Cabo acoge regularmente torneos del Campeonato Mundial.',
+    },
     countries: ['Serbia', 'Kazajistán', 'EAU', 'Egipto', 'México', 'India', 'China', 'Tailandia', 'Sudáfrica'],
     teamTitle: 'Dirección y expertos',
     people: [

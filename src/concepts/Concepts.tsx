@@ -165,7 +165,7 @@ function ExchangeRoute({ copy, ui }: { copy: Copy; ui: ConceptCopy }) {
 
 function Geography({ copy, ui }: { copy: Copy; ui: ConceptCopy }) {
   return <section className="c-geography c-section" id="geography"><div className="c-wrap"><Reveal className="c-section-heading"><div><p className="c-kicker">03 / {copy.geographyTitle}</p><h2>{ui.world}</h2></div><p>{ui.worldNote}</p></Reveal>
-    <Reveal><ExchangeRoute copy={copy} ui={ui} /></Reveal><Reveal className="c-geography-story"><p>{copy.geographyText}</p><aside><span className="c-kicker">MX / MEXICO</span><h3>{ui.mexico}</h3><p>{ui.mexicoNote}</p><Flag index={4} /></aside></Reveal>
+    <Reveal><ExchangeRoute copy={copy} ui={ui} /></Reveal><Reveal className="c-geography-story"><p>{copy.geographyIntro} {copy.countryDescriptions.mexico}</p><aside><span className="c-kicker">MX / MEXICO</span><h3>{ui.mexico}</h3><p>{ui.mexicoNote}</p><Flag index={4} /></aside></Reveal>
   </div></section>
 }
 
