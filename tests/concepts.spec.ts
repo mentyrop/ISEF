@@ -12,7 +12,7 @@ for (const design of concepts) {
         await page.evaluate(() => document.fonts.ready)
         await expect(page.locator('html')).toHaveAttribute('lang', lang)
         await expect(page.locator('h1')).toBeVisible()
-        await expect(page.locator('.c-person')).toHaveCount(6)
+        await expect(page.locator('.c-person')).toHaveCount(5)
         await expect(page.locator('.c-activity')).toHaveCount(6)
         await expect(page.locator('.c-route-track button')).toHaveCount(9)
         await page.locator('#contacts').scrollIntoViewIfNeeded()

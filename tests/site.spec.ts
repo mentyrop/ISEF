@@ -19,7 +19,7 @@ for (const width of [320, 390, 768, 1024, 1440, 1920]) {
       await expect(page.locator('html')).toHaveAttribute('lang', lang)
       await expect(page.locator('h1')).toBeVisible()
       await expect(page.locator('.country')).toHaveCount(9)
-      await expect(page.locator('.person')).toHaveCount(6)
+      await expect(page.locator('.person')).toHaveCount(5)
       await expect(page.locator('.activity-body:visible')).toHaveCount(6)
       await page.locator('#contacts').scrollIntoViewIfNeeded()
       const sizes = await page.evaluate(() => ({ width: innerWidth, scroll: document.documentElement.scrollWidth }))

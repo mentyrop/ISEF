@@ -57,7 +57,6 @@ export const content: Record<Language, Copy> = {
       { name: 'Александр Глазов', role: 'Исполнительный директор' },
       { name: 'Валерий Афанасьев', role: 'Эксперт по развитию хоккея' },
       { name: 'Александр Сазыкин', role: 'Эксперт по детскому и любительскому спорту' },
-      { name: 'Алексей Сазыкин', role: 'Эксперт по детскому и любительскому спорту' },
       { name: 'Сергей Глазов', role: 'Игрок сборной СССР по хоккею' },
     ],
     governance: [
@@ -115,7 +114,6 @@ export const content: Record<Language, Copy> = {
       { name: 'Alexander Glazov', role: 'Executive Director' },
       { name: 'Valery Afanasyev', role: 'Hockey development expert' },
       { name: 'Alexander Sazykin', role: 'Youth and amateur sports expert' },
-      { name: 'Alexey Sazykin', role: 'Youth and amateur sports expert' },
       { name: 'Sergey Glazov', role: 'USSR national hockey team player' },
     ],
     governance: [
@@ -173,7 +171,6 @@ export const content: Record<Language, Copy> = {
       { name: 'Alexander Glazov', role: 'Director ejecutivo' },
       { name: 'Valery Afanasyev', role: 'Experto en desarrollo del hockey' },
       { name: 'Alexander Sazykin', role: 'Experto en deporte infantil y aficionado' },
-      { name: 'Alexey Sazykin', role: 'Experto en deporte infantil y aficionado' },
       { name: 'Sergey Glazov', role: 'Jugador de la selección de hockey de la URSS' },
     ],
     governance: [
@@ -192,7 +189,7 @@ export const content: Record<Language, Copy> = {
 
 export const sectionIds = ['about', 'activities', 'geography', 'team', 'photos', 'contacts']
 export const flags = ['a04bb.png', 'ea52a.png', '8b078.png', 'e88dc.png', 'b446a.png', '10764.png', '3b415.png', '9c645.png', '8633d.png']
-export const portraits = ['99929.svg', '009ea.png', 'ae288.png', '50927.png', '1a437.png', 'sergey-glazov.jpg']
+export const portraits = ['99929.svg', '009ea.png', 'ae288.png', '50927.png', 'sergey-glazov.jpg']
 export const photos = ['218e8.png', '39df7.png', 'cbe9e.png']
 export const asset = (filename: string) => /\.(png|jpe?g)$/.test(filename)
   ? `${import.meta.env.BASE_URL}optimized/${filename.replace(/\.(png|jpe?g)$/, '.webp')}`

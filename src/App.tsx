@@ -247,7 +247,7 @@ export default function App() {
               <Reveal className="leadership">{[0, 1].map(index => <Person key={index} index={index} copy={copy} language={language} onOpen={setSelectedPerson} />)}</Reveal>
             </div>
             <div className="team-group" role="group" aria-label={biographyLabels[language].experts}>
-              <Reveal className="experts">{[2, 3, 4, 5].map(index => <Person key={index} index={index} copy={copy} language={language} onOpen={setSelectedPerson} />)}</Reveal>
+              <Reveal className="experts">{[2, 3, 4].map(index => <Person key={index} index={index} copy={copy} language={language} onOpen={setSelectedPerson} />)}</Reveal>
             </div>
             <div className="governance">{copy.governance.map((item, index) => <Reveal key={index} delay={index * 0.07}>
               <article><h3>{item.title}</h3><p>{item.description}</p></article>

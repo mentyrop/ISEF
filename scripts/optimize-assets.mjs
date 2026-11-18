@@ -12,7 +12,7 @@ const sizes = {
   '2d17b.png': 900,
   'sergey-glazov.jpg': 320,
   ...Object.fromEntries(['a04bb', 'ea52a', '8b078', 'e88dc', 'b446a', '10764', '3b415', '9c645', '8633d'].map(id => [id + '.png', 144])),
-  ...Object.fromEntries(['009ea', 'ae288', '50927', '1a437', 'aa036'].map(id => [id + '.png', 220])),
+  ...Object.fromEntries(['009ea', 'ae288', '50927', 'aa036'].map(id => [id + '.png', 220])),
 }
 
 await mkdir('public/optimized', { recursive: true })
